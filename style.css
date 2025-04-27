@@ -6,6 +6,7 @@ body {
     color: #6e5849;
     text-align: center;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -17,12 +18,24 @@ header {
     height: 120px;
     margin: 0 auto;
     display: block;
-    animation: fadeIn 2s ease;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideRight {
+    0% { opacity: 0; transform: translateX(-40px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.show-on-scroll {
+    animation: fadeSlideUp 1s forwards;
+}
+
+.show-on-scroll-right {
+    animation: fadeSlideRight 1s forwards;
 }
 
 .hero {
@@ -34,14 +47,14 @@ header {
     color: #6e5849;
 }
 
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+.hero h1, .hero p, .buttons {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease-out;
 }
 
-.hero p {
-    font-size: 24px;
-    margin-bottom: 30px;
+.hero h1, .hero p, .buttons a {
+    margin: 10px 0;
 }
 
 .buttons .button {
@@ -57,6 +70,57 @@ header {
 .buttons .button:hover {
     background: #d1b280;
     color: white;
+}
+
+.features {
+    padding: 60px 20px;
+    background-color: #faf9f7;
+}
+
+.features h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #6e5849;
+    margin-bottom: 40px;
+}
+
+.feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.feature-item {
+    background: #fff;
+    border: 1px solid #e0dcd5;
+    border-radius: 12px;
+    padding: 30px 20px;
+    width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    opacity: 0;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #6e5849;
 }
 
 .about {
@@ -78,4 +142,5 @@ header {
     max-width: 800px;
     margin: auto;
     line-height: 1.6;
+    opacity: 0;
 }

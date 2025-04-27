@@ -9,19 +9,45 @@
 </head>
 <body>
     <header>
-        <img src="images/logo.png" alt="Nuvéla Logo" class="logo">
+        <img src="images/logo.png" alt="Nuvéla Logo" class="logo animate-on-scroll">
     </header>
 
     <section class="hero">
-        <h1>Hak Ettiğin Işığa Yolculuk.</h1>
-        <p>Zarafet Seninle Başlar.</p>
-        <div class="buttons">
+        <h1 class="animate-on-scroll">Hak Ettiğin Işığa Yolculuk.</h1>
+        <p class="animate-on-scroll">Zarafet Seninle Başlar.</p>
+        <div class="buttons animate-on-scroll">
             <a href="#products" class="button">Ürünlerimizi Keşfet</a>
             <a href="#about" class="button">Nuvéla Dünyasını Tanı</a>
         </div>
     </section>
 
-    <section id="about" class="about">
+    <section class="features animate-on-scroll">
+        <h2>Nuvéla Size Ne Sunuyor?</h2>
+        <div class="feature-grid">
+            <div class="feature-item animate-on-scroll">
+                <div class="icon">🌿</div>
+                <h3>Saf İçerikler</h3>
+                <p>Doğanın en saf özüyle formüle edilir.</p>
+            </div>
+            <div class="feature-item animate-on-scroll">
+                <div class="icon">🎓</div>
+                <h3>Bilimsel Destek</h3>
+                <p>Dermatolojik olarak geliştirilmiştir.</p>
+            </div>
+            <div class="feature-item animate-on-scroll">
+                <div class="icon">💎</div>
+                <h3>Zamansız Zarafet</h3>
+                <p>Işıltınızı zamansız bir şıklıkla yansıtın.</p>
+            </div>
+            <div class="feature-item animate-on-scroll">
+                <div class="icon">✨</div>
+                <h3>Cilt Işıltısı</h3>
+                <p>Doğal güzelliğinizi ortaya çıkarır.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about animate-on-scroll-right">
         <h2>Hakkımızda</h2>
         <p>
             Nuvéla, doğanın eşsiz armağanlarını ve modern bilimin inceliklerini bir araya getiren zarif bir vizyonla doğdu.<br><br>
@@ -30,5 +56,22 @@
             Nuvéla ile, ışığınızı özgür bırakın. Çünkü hak ettiğiniz güzellik, içinizde saklıdır.
         </p>
     </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show-on-scroll');
+            }
+        });
+    });
+
+    elements.forEach(el => observer.observe(el));
+});
+</script>
+
 </body>
 </html>
