@@ -299,3 +299,21 @@ header {
 .social-icons img:hover {
     opacity: 1;
 }
+
+
+@keyframes heroGlow {
+    0% { background-color: #fdf8f5; }
+    50% { background-color: #fceee8; }
+    100% { background-color: #fdf8f5; }
+}
+
+.hero {
+    background-image: url('images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 120px 20px;
+    text-align: center;
+    color: #6e5849;
+    animation: heroGlow 8s infinite alternate;
+}
