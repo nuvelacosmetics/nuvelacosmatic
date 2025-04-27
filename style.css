@@ -1,32 +1,16 @@
 
+/* Temel Stiller */
 body {
     margin: 0;
-    font-family: 'Playfair Display', serif;
-    background-color: #faf9f7;
-    color: #6e5849;
-    text-align: center;
     padding: 0;
-    scroll-behavior: smooth;
+    font-family: 'Open Sans', sans-serif;
 }
 
-header {
-    padding: 20px;
-}
-
-.logo {
-    width: auto;
-    height: 120px;
-    margin: 0 auto;
-    display: block;
-}
-
-@keyframes fadeSlideUp {
-    0% { opacity: 0; transform: translateY(40px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-.show-on-scroll {
-    animation: fadeSlideUp 1s forwards;
+/* Hero Bölümü */
+@keyframes heroGlow {
+    0% { background-color: #fdf8f5; }
+    50% { background-color: #fceee8; }
+    100% { background-color: #fdf8f5; }
 }
 
 .hero {
@@ -34,136 +18,115 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 100px 20px;
+    padding: 120px 20px;
+    text-align: center;
     color: #6e5849;
+    animation: heroGlow 8s infinite alternate;
 }
 
-.hero h1, .hero p, .buttons {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease-out;
+/* Animasyonlar */
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-.buttons .button {
-    margin: 10px;
-    padding: 12px 24px;
-    border: 1px solid #d1b280;
-    color: #6e5849;
-    text-decoration: none;
-    font-size: 18px;
-    transition: background 0.3s;
+@keyframes fadeSlideLeft {
+    0% { opacity: 0; transform: translateX(40px); }
+    100% { opacity: 1; transform: translateX(0); }
 }
 
-.buttons .button:hover {
-    background: #d1b280;
-    color: white;
+.show-on-scroll {
+    animation: fadeSlideUp 1s forwards;
 }
 
-.features {
-    padding: 60px 20px;
-    background-color: #faf9f7;
+.show-on-scroll-left {
+    animation: fadeSlideLeft 1s forwards;
 }
 
-.features h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    color: #6e5849;
-    margin-bottom: 40px;
-}
-
-.feature-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-.feature-item {
-    background: #fff;
-    border: 1px solid #e0dcd5;
-    border-radius: 12px;
-    padding: 30px 20px;
-    width: 220px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-    opacity: 0;
-}
-
-.feature-item:hover {
-    transform: translateY(-5px);
-}
-
-.icon {
-    font-size: 40px;
-    margin-bottom: 15px;
-}
-
-.feature-item h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.feature-item p {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    color: #6e5849;
-}
-
-.about-section {
-    background-color: #fffaf6;
-    padding: 80px 20px;
-}
-
-.about-container {
+/* Ürün detayları */
+.product-detail {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    max-width: 1200px;
-    margin: auto;
-    gap: 40px;
+    padding: 80px 20px;
+    background-color: #fff8f1;
 }
 
-.about-text {
+.product-image img {
+    width: 300px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+}
+
+.product-image img:hover {
+    transform: scale(1.05);
+}
+
+.product-info {
     flex: 1 1 500px;
     text-align: left;
+    padding: 20px;
 }
 
-.about-text h2 {
+.product-info h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 36px;
+    font-size: 40px;
+    color: #6e5849;
+    margin-bottom: 10px;
+}
+
+.product-info h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    color: #a18b74;
+    margin-bottom: 20px;
+}
+
+.product-info p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
     color: #6e5849;
     margin-bottom: 20px;
 }
 
-.about-text p {
-    font-family: 'Open Sans', sans-serif;
+.product-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.product-info ul li {
     font-size: 18px;
     color: #6e5849;
-    line-height: 1.7;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
 }
 
-.about-text blockquote {
-    margin-top: 20px;
-    font-style: italic;
-    color: #a18b74;
-    font-size: 20px;
-    border-left: 3px solid #d1b280;
-    padding-left: 15px;
+.product-info ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #d1b280;
 }
 
-.about-image {
-    flex: 1 1 400px;
+.product-info .button {
+    padding: 12px 24px;
+    background-color: #d1b280;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
 
-.about-image img {
-    width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.product-info .button:hover {
+    background-color: #b89e6f;
 }
 
-
+/* Kullanım önerisi */
 .usage-section {
     background-color: #fffaf6;
     padding: 60px 20px;
@@ -189,52 +152,7 @@ header {
     line-height: 1.7;
 }
 
-
-@keyframes fadeSlideUp {
-    0% { opacity: 0; transform: translateY(40px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeSlideLeft {
-    0% { opacity: 0; transform: translateX(40px); }
-    100% { opacity: 1; transform: translateX(0); }
-}
-
-.show-on-scroll {
-    animation: fadeSlideUp 1s forwards;
-}
-
-.show-on-scroll-left {
-    animation: fadeSlideLeft 1s forwards;
-}
-
-/* Hover efektler */
-.product-image img {
-    width: 300px;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    transition: transform 0.5s ease;
-}
-
-.product-image img:hover {
-    transform: scale(1.05);
-}
-
-.product-info .button {
-    padding: 12px 24px;
-    background-color: #d1b280;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-}
-
-.product-info .button:hover {
-    background-color: #b89e6f;
-}
-
-/* Footer stili */
+/* Footer */
 .site-footer {
     background-color: #fff8f1;
     padding: 30px 20px;
@@ -301,19 +219,28 @@ header {
 }
 
 
-@keyframes heroGlow {
-    0% { background-color: #fdf8f5; }
-    50% { background-color: #fceee8; }
-    100% { background-color: #fdf8f5; }
+.ingredients-section {
+    background-color: #fffaf6;
+    padding: 60px 20px;
+    margin-top: 40px;
+    border-radius: 16px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.hero {
-    background-image: url('images/hero-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 120px 20px;
-    text-align: center;
+.ingredients-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
     color: #6e5849;
-    animation: heroGlow 8s infinite alternate;
+    margin-bottom: 20px;
+}
+
+.ingredients-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #6e5849;
+    font-size: 18px;
+    line-height: 1.8;
 }
