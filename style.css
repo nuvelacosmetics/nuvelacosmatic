@@ -26,7 +26,12 @@ header {
 }
 
 .hero {
-    padding: 60px 20px;
+    background-image: url('images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    color: #6e5849;
 }
 
 .hero h1 {
