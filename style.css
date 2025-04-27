@@ -188,3 +188,30 @@ header {
     color: #6e5849;
     line-height: 1.7;
 }
+
+
+/* Hover efektler */
+.product-image img {
+    width: 300px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+}
+
+.product-image img:hover {
+    transform: scale(1.05);
+}
+
+.product-info .button {
+    padding: 12px 24px;
+    background-color: #d1b280;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.product-info .button:hover {
+    background-color: #b89e6f;
+}
