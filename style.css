@@ -5,7 +5,28 @@ body {
     background-color: #faf9f7;
     color: #6e5849;
     text-align: center;
-    padding: 50px;
+    padding: 0;
+}
+
+header {
+    padding: 20px;
+}
+
+.logo {
+    width: auto;
+    height: 120px;
+    margin: 0 auto;
+    display: block;
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.hero {
+    padding: 60px 20px;
 }
 
 .hero h1 {
