@@ -32,3 +32,24 @@ body {
     background: #d1b280;
     color: white;
 }
+
+.about {
+    background-color: #fff8f1;
+    padding: 60px 20px;
+}
+
+.about h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #6e5849;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: #6e5849;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+}
