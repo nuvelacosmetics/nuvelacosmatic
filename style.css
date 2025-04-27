@@ -25,17 +25,8 @@ header {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeSlideRight {
-    0% { opacity: 0; transform: translateX(-40px); }
-    100% { opacity: 1; transform: translateX(0); }
-}
-
 .show-on-scroll {
     animation: fadeSlideUp 1s forwards;
-}
-
-.show-on-scroll-right {
-    animation: fadeSlideRight 1s forwards;
 }
 
 .hero {
@@ -51,10 +42,6 @@ header {
     opacity: 0;
     transform: translateY(40px);
     transition: all 1s ease-out;
-}
-
-.hero h1, .hero p, .buttons a {
-    margin: 10px 0;
 }
 
 .buttons .button {
@@ -123,24 +110,55 @@ header {
     color: #6e5849;
 }
 
-.about {
-    background-color: #fff8f1;
-    padding: 60px 20px;
+.about-section {
+    background-color: #fffaf6;
+    padding: 80px 20px;
 }
 
-.about h2 {
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1 1 500px;
+    text-align: left;
+}
+
+.about-text h2 {
     font-family: 'Playfair Display', serif;
     font-size: 36px;
     color: #6e5849;
     margin-bottom: 20px;
 }
 
-.about p {
+.about-text p {
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     color: #6e5849;
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.6;
-    opacity: 0;
+    line-height: 1.7;
+}
+
+.about-text blockquote {
+    margin-top: 20px;
+    font-style: italic;
+    color: #a18b74;
+    font-size: 20px;
+    border-left: 3px solid #d1b280;
+    padding-left: 15px;
+}
+
+.about-image {
+    flex: 1 1 400px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
