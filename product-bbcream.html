@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxia BB Cream | Nuvéla</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="images/logo.png" alt="Nuvéla Logo" class="logo animate-on-scroll">
+</header>
+
+<section class="product-detail animate-on-scroll">
+    <div class="product-image">
+        <img src="images/luxia-bb-detail.png" alt="Luxia BB Cream">
+    </div>
+    <div class="product-info">
+        <h1>Luxia BB Cream</h1>
+        <h3>Vitamin Destekli, Işıltılı Kusursuzluk.</h3>
+        <p>Saf mineral SPF 50+ koruma ile cildinize kusursuz bir kalkan sunar. Vitamin kompleksleri ve peptitlerle zenginleştirilmiş formülü, cildinizin doğal ışıltısını ortaya çıkarır.</p>
+        <ul>
+            <li>SPF 50+ Fiziksel Koruma</li>
+            <li>Vitamin C, E ve Peptit Kompleksi</li>
+            <li>Leke Karşıtı Etki</li>
+            <li>Nemli ve Işıltılı Bitiş</li>
+        </ul>
+        <a href="#" class="button">Şimdi Keşfet</a>
+    </div>
+</section>
+
+<section class="usage-section animate-on-scroll">
+    <h2>Kullanım Önerisi</h2>
+    <p>Temizlenmiş ve nemlendirilmiş cilde, parmak uçlarınızla veya bir makyaj süngeri yardımıyla eşit şekilde uygulayın.<br>
+    İhtiyaca göre katmanlayarak daha yoğun bir örtücülük sağlayabilirsiniz.<br>
+    Günlük kullanım için idealdir.</p>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show-on-scroll');
+            }
+        });
+    });
+    elements.forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>
