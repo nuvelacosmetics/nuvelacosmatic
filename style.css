@@ -190,6 +190,24 @@ header {
 }
 
 
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideLeft {
+    0% { opacity: 0; transform: translateX(40px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.show-on-scroll {
+    animation: fadeSlideUp 1s forwards;
+}
+
+.show-on-scroll-left {
+    animation: fadeSlideLeft 1s forwards;
+}
+
 /* Hover efektler */
 .product-image img {
     width: 300px;

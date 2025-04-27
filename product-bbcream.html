@@ -14,10 +14,10 @@
 </header>
 
 <section class="product-detail animate-on-scroll">
-    <div class="product-image">
+    <div class="product-image animate-on-scroll">
         <img src="images/luxia-bb-detail.png" alt="Luxia BB Cream">
     </div>
-    <div class="product-info">
+    <div class="product-info animate-on-scroll">
         <h1>Luxia BB Cream</h1>
         <h3>Vitamin Destekli, Işıltılı Kusursuzluk.</h3>
         <p>Saf mineral SPF 50+ koruma ile cildinize kusursuz bir kalkan sunar. Vitamin kompleksleri ve peptitlerle zenginleştirilmiş formülü, cildinizin doğal ışıltısını ortaya çıkarır.</p>
@@ -31,7 +31,7 @@
     </div>
 </section>
 
-<section class="usage-section animate-on-scroll">
+<section class="usage-section animate-on-scroll-left">
     <h2>Kullanım Önerisi</h2>
     <p>Temizlenmiş ve nemlendirilmiş cilde, parmak uçlarınızla veya bir makyaj süngeri yardımıyla eşit şekilde uygulayın.<br>
     İhtiyaca göre katmanlayarak daha yoğun bir örtücülük sağlayabilirsiniz.<br>
@@ -40,11 +40,15 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    const elements = document.querySelectorAll('.animate-on-scroll');
+    const elements = document.querySelectorAll('.animate-on-scroll, .animate-on-scroll-left');
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('show-on-scroll');
+                if (entry.target.classList.contains('animate-on-scroll-left')) {
+                    entry.target.classList.add('show-on-scroll-left');
+                } else {
+                    entry.target.classList.add('show-on-scroll');
+                }
             }
         });
     });
